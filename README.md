@@ -83,3 +83,16 @@ This tool is not a crisis service. If you need support, please reach out to a pr
 
 *ima-mode is a concept art project and open specification.*
 *ima-modeはコンセプトアートプロジェクトであり、オープンな仕様書です。*
+
+---
+
+## Acknowledgments / 謝辞
+
+This project was shaped in part by the work of Keiichiro Hirano, whose concept of the *dividual* (分人, *bunjin*) — the idea that a person is not a single fixed self but a plurality of selves that emerge in relation to others — resonates deeply with the thinking behind ima-mode.
+
+このプロジェクトの思想的な形成に、平野啓一郎の著作が深く関わっています。「個人」ではなく関係性の中で複数生まれる「分人」という概念は、ima-modeの根底にある考え方と強く響き合っています。
+
+Keiichiro Hirano, *Watashi to wa Nanika — "Kojin" kara "Bunjin" e*
+平野啓一郎『私とは何か　「個人」から「分人」へ』
+講談社 / Kodansha, 2012
+ISBN 978-4-06-288172-2
