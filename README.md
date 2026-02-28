@@ -68,8 +68,8 @@ Some areas are pending expert review. See `IMPLEMENTATION_NOTES.md` for details.
 ## Forms / 形式
 
 - Smartphone app (planned) / スマートフォンアプリ（予定）
-- PDF workbook / PDFワークブック
-- Card kit / カードキット
+- PDF workbook (planned) / PDFワークブック（予定）
+- Card kit (planned) / カードキット（予定）
 
 ---
 
