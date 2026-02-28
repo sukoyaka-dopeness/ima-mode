@@ -15,7 +15,7 @@ This document provides technical and UX implementation guidance for builders wor
 
 | Form / 形式 | Technology / 技術 | Status / ステータス |
 |-------------|------------------|-------------------|
-| Smartphone app / スマートフォンアプリ | React Native or Flutter / React NativeまたはFlutter | Primary / 主要 |
+| Smartphone app / スマートフォンアプリ | React Native or Flutter / React NativeまたはFlutter | Planned / 予定 |
 | PDF workbook / PDFワークブック | — | Planned / 予定 |
 | Card kit / カードキット | — | Planned / 予定 |
 
@@ -41,8 +41,8 @@ No data is transmitted outside the device. No third-party analytics or tracking 
 ## UX specifications / UX仕様
 
 ### Board / ボード
-- **だれもいないモード** is displayed at the visual center of the board.
-  **だれもいないモード**はボードの視覚的中心に表示されます。
+- **"Alone mode" (だれもいないモード)** is displayed at the visual center of the board.
+  **「Alone mode」(だれもいないモード)** はボードの視覚的中心に表示されます。
 - All modes are connected to the center with lines.
   すべてのモードは線で中心と接続されます。
 - The phrase *"These are all part of you." / 「全部があなたの一部」* is displayed persistently on the board.
@@ -54,25 +54,51 @@ No data is transmitted outside the device. No third-party analytics or tracking 
 - Up to 50–100 modes stored internally.
   内部には最大50〜100のモードを保存。
 
+### Session completion UI / セッション完了UI
+When a mode card entry is completed, the following sequence occurs:
+
+モードカードへの入力が完了したとき、以下の順序で表示されます：
+
+1. Haptic feedback / ハプティクスフィードバック
+2. Completion message / 完了メッセージ："Saved" (残せました)
+3. Two buttons / 2つのボタン：
+   - "＋" → Next mode card / 次のモードカードへ
+   - "That's enough for today" (今日はここまで) → Return to board / ボードに戻る
+
+The completion message and button labels carry no punctuation, in keeping with the soft tone of the app.
+
+完了メッセージとボタンラベルには句点をつけない。アプリの柔らかいトーンに合わせるためです。
+
+Note: English translations of "残せました" and "今日はここまで" are provisional. Final copy should be verified by a native English speaker with knowledge of the project's tone.
+
+注：「残せました」「今日はここまで」の英語訳は暫定です。最終的な文言はプロジェクトのトーンを理解した英語ネイティブによる確認を推奨します。
+
 ### Deletion / 削除
 - One-tap full delete is always visible.
   ワンタップ全削除は常時表示。
-- A panic dummy screen is implemented to protect user privacy in sensitive situations.
-  センシティブな状況でのユーザープライバシー保護のため、パニックダミースクリーンを実装します。
+
+### Panic dummy screen / パニックダミースクリーン
+- Trigger: two-finger simultaneous tap / トリガー：2本指同時タップ
+- No text on the dummy screen / ダミースクリーン上に文言なし
+- Explained once during onboarding or in settings / オンボーディングまたは設定画面で一度だけ説明する
+- Design principle: the dummy screen should look like a screen that anyone might ordinarily have open. A plain single-color screen is unnatural and should be avoided.
+  設計方針：ダミースクリーンは誰でも日常的に開いている可能性がある画面に見えることが望ましい。単色の画面は不自然であり避けること。
+- See TBD_FOR_IMPLEMENTORS for candidate screen types.
+  候補画面の種類についてはTBD_FOR_IMPLEMENTORSを参照。
 
 ### Session flow / セッションフロー
 - Entry: time-appropriate neutral greeting (morning / daytime / evening).
   開始：時間帯に応じた中立的な挨拶（朝・昼・夜）。
-- Exit: soft closure. No summary. No score. No evaluative statement.
-  終了：穏やかなクロージャー。サマリーなし。スコアなし。評価的な発言なし。
+- Exit: user returns to board via "That's enough for today" (今日はここまで) and closes the app freely.
+  終了：「今日はここまで」でボードに戻り、ユーザーが自由にアプリを閉じる。
 
 ### Mode suggestion / モード提案
 - On demand only. No push notifications. No proactive suggestions.
   オンデマンドのみ。プッシュ通知なし。積極的な提案なし。
 
 ### Haptics / ハプティクス
-- Triggered on successful record entry.
-  記録の完了時にトリガー。
+- Triggered on successful mode card entry.
+  モードカードへの記録完了時にトリガー。
 - Quality target: gentle, satisfying — the feeling of having recorded safely, not the feeling of achievement.
   質感のターゲット：穏やかで心地よい——達成感ではなく、安全に記録できた安心感。
 - Reference: Duolingo-style haptic feedback pattern.
@@ -123,6 +149,7 @@ The following items are left to implementor judgment, based on local context, us
 | mode vs. state A/B test / mode vs. state A/Bテスト | Whether to use "mode" or "state" in English-language UI copy should be tested post-launch. The specification uses "mode" as default. / 英語UIでmodeとstateのどちらを使うかはローンチ後にテストする。仕様書ではmodeをデフォルトとして使用。 |
 | Locale-specific crisis hotline numbers / ロケール別クライシスホットライン番号 | Replace placeholder with local numbers during localization. / ローカライズ時にプレースホルダーを地域の番号に置き換える。 |
 | Culture-specific mode names / 文化固有のモード名 | Add or adapt mode names to reflect local relational contexts. See CULTURAL_LAYER.md. / 地域の関係的文脈を反映するモード名を追加・適応させる。CULTURAL_LAYER.mdを参照。 |
+| Panic dummy screen content / パニックダミースクリーンの中身 | The screen should resemble an app that anyone might ordinarily have open. Candidate types: note-taking app style / calendar style / weather app style. Final choice left to implementor. / 誰でも日常的に開いている可能性があるアプリに見える画面が望ましい。候補：メモ帳風 / カレンダー風 / 天気予報風。最終的な選択は実装者に委ねる。 |
 
 ---
 
