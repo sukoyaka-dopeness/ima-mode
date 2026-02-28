@@ -56,6 +56,7 @@ Modes such as 役所にいるときモード (at a government office mode) refle
 | Cultural modes / 文化固有モード | Add modes that reflect local relational contexts / 地域の関係的文脈を反映するモードを追加する |
 | Crisis hotline numbers / 危機相談窓口番号 | Replace with local numbers / 地域の番号に置き換える |
 | Tone and honorifics / トーンと敬語 | Adapt to local linguistic norms / 地域の言語規範に合わせて適応させる |
+| Time-based greetings / 時間帯別挨拶 | Adapt to local conventions; some cultures do not distinguish greetings by time of day / 地域の慣習に合わせて適応させる；時間帯で挨拶を変える習慣が薄い文化圏もある |
 
 ### What not to localize / ローカライズすべきでないもの
 
